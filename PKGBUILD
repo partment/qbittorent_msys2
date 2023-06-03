@@ -1,6 +1,6 @@
 # Maintainer: Chocobo1 <https://github.com/Chocobo1>
 
-_realname=qbittorrent
+_realname=qBittorrent-Enhanced-Edition
 pkgbase=mingw-w64-${_realname}-git
 pkgname=${MINGW_PACKAGE_PREFIX}-${_realname}-git
 pkgver=r11712.648451a01
@@ -22,7 +22,7 @@ makedepends=("git"
 optdepends=("${MINGW_PACKAGE_PREFIX}-python: needed for torrent search tab")
 provides=("${MINGW_PACKAGE_PREFIX}-${_realname}")
 conflicts=("${MINGW_PACKAGE_PREFIX}-${_realname}")
-source=("git+https://github.com/qbittorrent/qBittorrent.git")
+source=("git+https://github.com/partment/qBittorrent-Enhanced-Edition.git")
 sha256sums=('SKIP')
 
 
@@ -35,7 +35,7 @@ prepare() {
     -e 's/NTDDI_VERSION/#NTDDI_VERSION/g' \
     -e 's/_WIN32_WINNT/#_WIN32_WINNT/g' \
     -e 's/_WIN32_IE/#_WIN32_IE/g' \
-    "cmake/Modules/MacroQbtCommonConfig.cmake"
+    "cmake/Modules/CommonConfig.cmake"
 }
 
 pkgver() {
